@@ -1,0 +1,867 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Firatech - Innovating Africa, One Tech Talent at a Time">
+    <meta name="keywords" content="STEAM Education, Robotics, AI, Aerospace Education, Embedded Systems, Technology in Africa">
+    <title>Firatech - Home</title>
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/images/favicon.png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <style>
+        :root {
+            --primary-color: #6a0dad;
+            --secondary-color: #8e24aa;
+            --light-color: #f3e5f5;
+            --dark-color: #212121;
+            --white-color: #ffffff;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        .navbar {
+            background-color: rgba(106, 13, 173, 0.95) !important;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
+        }
+        
+        .navbar-brand img {
+            height: 50px;
+        }
+        
+        .navbar-nav .nav-link {
+            color: var(--white-color) !important;
+            font-weight: 500;
+            padding: 10px 15px !important;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--light-color) !important;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 5px;
+        }
+        
+        .navbar-toggler {
+            border: none;
+            color: var(--white-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(106, 13, 173, 0.8), rgba(106, 13, 173, 0.9)), url('https://api.placeholder.com/1920/800');
+            background-size: cover;
+            background-position: center;
+            color: var(--white-color);
+            padding: 150px 0;
+            position: relative;
+        }
+        
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+        }
+        
+        .btn-custom {
+            background-color: var(--white-color);
+            color: var(--primary-color);
+            border: 2px solid var(--white-color);
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-custom:hover {
+            background-color: transparent;
+            color: var(--white-color);
+        }
+        
+        .btn-outline-custom {
+            background-color: transparent;
+            color: var(--white-color);
+            border: 2px solid var(--white-color);
+            padding: 12px 30px;
+            font-weight: 600;
+            border-radius: 50px;
+            margin-left: 15px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-custom:hover {
+            background-color: var(--white-color);
+            color: var(--primary-color);
+        }
+        
+        /* Features Section */
+        .features {
+            padding: 100px 0;
+            background-color: var(--white-color);
+        }
+        
+        .section-title {
+            margin-bottom: 60px;
+            text-align: center;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            position: relative;
+            padding-bottom: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+        }
+        
+        .feature-box {
+            text-align: center;
+            padding: 30px;
+            margin-bottom: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .feature-box:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(106, 13, 173, 0.2);
+        }
+        
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .feature-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        .feature-box p {
+            color: #777;
+        }
+        
+        /* About Preview Section */
+        .about-preview {
+            padding: 100px 0;
+            background-color: var(--light-color);
+        }
+        
+        .about-img {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .about-img img {
+            width: 100%;
+            transition: transform 0.5s ease;
+        }
+        
+        .about-img:hover img {
+            transform: scale(1.05);
+        }
+        
+        .about-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        
+        .about-content p {
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .about-list {
+            margin-bottom: 25px;
+        }
+        
+        .about-list li {
+            margin-bottom: 15px;
+            position: relative;
+            padding-left: 30px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .about-list li i {
+            position: absolute;
+            left: 0;
+            top: 5px;
+            color: var(--primary-color);
+        }
+        
+        /* Services Preview */
+        .services-preview {
+            padding: 100px 0;
+            background-color: var(--white-color);
+        }
+        
+        .service-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 30px rgba(106, 13, 173, 0.2);
+        }
+        
+        .service-img {
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .service-img img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .service-card:hover .service-img img {
+            transform: scale(1.1);
+        }
+        
+        .service-content {
+            padding: 25px;
+        }
+        
+        .service-content h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        .service-content p {
+            color: #777;
+            margin-bottom: 20px;
+        }
+        
+        .read-more {
+            color: var(--primary-color);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .read-more:hover {
+            color: var(--secondary-color);
+        }
+        
+        .read-more i {
+            margin-left: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .read-more:hover i {
+            transform: translateX(5px);
+        }
+        
+        /* CTA Section */
+        .cta {
+            padding: 80px 0;
+            background: linear-gradient(rgba(106, 13, 173, 0.9), rgba(106, 13, 173, 0.9)), url('https://api.placeholder.com/1920/800');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: var(--white-color);
+            text-align: center;
+        }
+        
+        .cta h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .cta p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background-color: var(--light-color);
+        }
+        
+        .testimonial-card {
+            background-color: var(--white-color);
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            position: relative;
+        }
+        
+        .testimonial-card::after {
+            content: '\201D';
+            font-family: serif;
+            position: absolute;
+            right: 30px;
+            top: 20px;
+            font-size: 5rem;
+            line-height: 0;
+            color: var(--light-color);
+            opacity: 0.5;
+        }
+        
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 20px;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+        }
+        
+        .author-img {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin-right: 15px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .author-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-info h4 {
+            font-size: 1.2rem;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+        
+        .author-info p {
+            color: #777;
+            margin: 0;
+        }
+        
+        /* Footer */
+        .footer {
+            background-color: var(--dark-color);
+            color: var(--white-color);
+            padding: 80px 0 0;
+        }
+        
+        .footer-logo {
+            margin-bottom: 25px;
+        }
+        
+        .footer-logo img {
+            height: 60px;
+        }
+        
+        .footer-text {
+            color: #aaa;
+            margin-bottom: 25px;
+        }
+        
+        .footer-social a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            color: var(--white-color);
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        
+        .footer-social a:hover {
+            background-color: var(--primary-color);
+            transform: translateY(-5px);
+        }
+        
+        .footer h4 {
+            font-size: 1.5rem;
+            margin-bottom: 25px;
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer h4::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--primary-color);
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 15px;
+        }
+        
+        .footer-links a {
+            color: #aaa;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .footer-links a:before {
+            content: '\f105';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--primary-color);
+        }
+        
+        .footer-links a:hover {
+            color: var(--white-color);
+            padding-left: 25px;
+        }
+        
+        .footer-contact-info {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-contact-info li {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .footer-contact-info li i {
+            font-size: 1.2rem;
+            color: var(--primary-color);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        .footer-contact-info li p {
+            margin: 0;
+            color: #aaa;
+        }
+        
+        .footer-bottom {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 20px 0;
+            margin-top: 60px;
+            text-align: center;
+        }
+        
+        .footer-bottom p {
+            margin: 0;
+            color: #aaa;
+        }
+        
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            width: 45px;
+            height: 45px;
+            background-color: var(--primary-color);
+            color: var(--white-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            z-index: 99;
+            cursor: pointer;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .back-to-top.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .back-to-top:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-5px);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 991px) {
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .about-content {
+                margin-top: 30px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .hero {
+                padding: 100px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .navbar-collapse {
+                background-color: var(--primary-color);
+                padding: 20px;
+                border-radius: 10px;
+                margin-top: 15px;
+            }
+            
+            .btn-outline-custom {
+                margin-left: 0;
+                margin-top: 15px;
+            }
+            
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <img src="assets/images/icon.png" alt="Firatech Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About Us</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="services.html">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="products.html">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact.html">Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up" data-aos-delay="100">
+                    <h2>Innovating Africa, One Tech Talent at a Time</h2>
+                    <p>Firatech is a dynamic startup committed to transforming Africa's technological landscape by bridging the literacy gap in STEAM Education, Robotics, AI, Aerospace Education, and Embedded Systems.</p>
+                    <a href="about.html" class="btn btn-custom">Learn More</a>
+                    <a href="contact.html" class="btn btn-outline-custom">Get in Touch</a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Why Choose Firatech?</h2>
+                <p>We are committed to empowering the next generation of African Leaders, Thinkers, and Innovators.</p>
+            </div>
+            <div class="row">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <h3>Innovation at the Core</h3>
+                        <p>We embrace cutting-edge technology and forward-thinking educational practices to deliver a learning experience that prepares students for the future.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe-africa"></i>
+                        </div>
+                        <h3>Inclusivity and Accessibility</h3>
+                        <p>Our virtual programs and workshops are designed to be accessible to individuals from all backgrounds, regardless of geographical location or socioeconomic status.</p>
+                    </div>
+                </div>
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-box">
+                        <div class="feature-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3>Community and Collaboration</h3>
+                        <p>We foster a collaborative environment where learners, educators, and professionals can come together to share ideas, challenge themselves, and grow.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Preview Section -->
+    <section class="about-preview">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6" data-aos="fade-right">
+                    <div class="about-img">
+                        <img src="assets/images/who.png" alt="About Firatech">
+                    </div>
+                </div>
+                <div class="col-lg-6" data-aos="fade-left">
+                    <div class="about-content">
+                        <h2>Who We Are</h2>
+                        <p>Firatech is a dynamic startup committed to transforming Africa's technological landscape by bridging the literacy gap in Science, Technology, Engineering, Arts, and Mathematics (STEAM), with a special focus on Mechatronics, Robotics, Aerospace, Artificial Intelligence, and Embedded Systems.</p>
+                        <ul class="about-list list-unstyled">
+                            <li><i class="fas fa-check-circle"></i> World-class training in advanced technological fields</li>
+                            <li><i class="fas fa-check-circle"></i> Hands-on experiences in STEAM-related fields</li>
+                            <li><i class="fas fa-check-circle"></i> Innovative educational programs designed for real-world challenges</li>
+                        </ul>
+                        <a href="about.html" class="btn btn-custom">Read More About Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Preview -->
+    <section class="services-preview">
+        <div class="container">
+            <div class="section-title" data-aos="fade-up">
+                <h2>Our Services</h2>
+                <p>Discover our range of innovative educational programs and resources</p>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="assets/images/STEAM.png" alt="STEAM Education">
+                        </div>
+                        <div class="service-content">
+                            <h3>STEAM Education</h3>
+                            <p>Comprehensive education programs covering Science, Technology, Engineering, Arts, and Mathematics designed to build a strong foundation for technological advancement.</p>
+                            <a href="services.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="assets/images/Robotics.png" alt="Robotics">
+                        </div>
+                        <div class="service-content">
+                            <h3>Robotics</h3>
+                            <p>Hands-on robotics programs teaching programming, design, and implementation of robotic systems for practical applications across various industries.</p>
+                            <a href="services.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+                    <div class="service-card">
+                        <div class="service-img">
+                            <img src="assets/images/A.I.png" alt="Artificial Intelligence">
+                        </div>
+                        <div class="service-content">
+                            <h3>Artificial Intelligence</h3>
+                            <p>Cutting-edge AI courses covering machine learning, deep learning, natural language processing, and AI implementation for solving complex problems.</p>
+                            <a href="services.html" class="read-more">Learn More <i class="fas fa-arrow-right"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5" data-aos="fade-up" data-aos-delay="400">
+                <a href="services.html" class="btn btn-custom">View All Services</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta">
+        <div class="container">
+            <div data-aos="fade-up">
+                <h2>Ready to Join Our Movement?</h2>
+                <p>Firatech is more than just an educational platform — it's a movement. A movement that seeks to empower the next generation of African leaders, thinkers, and innovators.</p>
+                <a href="contact.html" class="btn btn-custom">Contact Us Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 col-md-6">
+                    <div class="footer-logo">
+                        <img src="assets/images/icon.png" alt="Firatech Logo">
+                    </div>
+                    <p class="footer-text">Firatech is a dynamic startup committed to transforming Africa's technological landscape through STEAM Education, Robotics, AI, Aerospace Education, and Embedded Systems.</p>
+                    <div class="footer-social">
+                        <!-- <a href="#"><i class="fab fa-facebook-f"></i></a> -->
+                       <!-- <a href="#"><i class="fab fa-twitter"></i></a> -->
+                       <!-- <a href="#"><i class="fab fa-instagram"></i></a> -->
+                        <a href="https://www.linkedin.com/company/firatech/?viewAsMember=true"><i class="fab fa-linkedin-in"></i></a>
+                       <!-- <a href="#"><i class="fab fa-youtube"></i></a> -->
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mt-4 mt-md-0">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="services.html">Services</a></li>
+                        <li><a href="products.html">Products</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+                    <h4>Our Services</h4>
+                    <ul class="footer-links">
+                        <li><a href="services.html">STEAM Education</a></li>
+                        <li><a href="services.html">Robotics</a></li>
+                        <li><a href="services.html">Artificial Intelligence</a></li>
+                        <li><a href="services.html">Aerospace Education</a></li>
+                        <li><a href="services.html">Embedded Systems</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mt-4 mt-lg-0">
+                    <h4>Contact Info</h4>
+                    <ul class="footer-contact-info">
+                        <li>
+                            <i class="fas fa-map-marker-alt"></i>
+                            <p>25, Adeniran Ogunsanya Str., Sabo, Ikorodu, Lagos, Nigeria</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-phone-alt"></i>
+                            <p>+233 50 234 1465 <br />
+                            +234 704 080 8324</p>
+                        </li>
+                        <li>
+                            <i class="fas fa-envelope"></i>
+                            <p>learn@firatech.africa <br />
+                            firatechafrica@gmail.com</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="container">
+                <p>&copy; 2025 Firatech. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to top button -->
+    <a href="index.html" class="back-to-top"><i class="fas fa-arrow-up"></i></a>
+    
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+    <!-- Custom JS -->
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+        
+        // Back to top button
+        const backToTopButton = document.querySelector('.back-to-top');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopButton.classList.add('active');
+            } else {
+                backToTopButton.classList.remove('active');
+            }
+        });
+        
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    </script>
