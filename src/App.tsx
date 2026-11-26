@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef, useMemo } from 'react';
+import { useState, useEffect, useRef, useMemo } from 'react';
 import {
   Cpu,
   Wifi,
@@ -11,7 +11,6 @@ import {
   Sparkles,
   Send,
   Play,
-  Square,
   Calculator,
   Building2,
   Users,
@@ -21,7 +20,6 @@ import {
   Menu,
   X,
   Usb,
-  Activity,
   Code2,
   Award,
   PhoneCall,
@@ -37,14 +35,11 @@ import {
   Radio,
   Copy,
   Check,
-  Compass,
   FileText,
   Sparkle,
   Terminal,
-  BookOpen,
   ExternalLink,
   Brain,
-  Zap,
   CircuitBoard
 } from 'lucide-react';
 
